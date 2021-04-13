@@ -1,0 +1,42 @@
+package com.tcs;
+
+import java.util.Vector;
+
+public class VectorTest {
+	
+	public static void main(String[] args) 
+	{
+		Vector<String> v = new Vector<String>();
+		System.out.println(v.capacity());
+		v.capacity();
+		v.add("ram");
+		v.add("ratan");
+		System.out.println(v.capacity());
+		
+		System.out.println(v);
+		
+		
+		Vector<String> v2 = new Vector<String>(20);
+		System.out.println(v2.capacity()); //20
+		v2.add("ram");
+		v2.add("ratan");
+		v2.add("anu");
+		System.out.println(v2.capacity()); //20
+		
+		System.out.println(v2);
+		
+		Vector<String> v3 = new Vector<String>(20);
+		System.out.println(v.capacity()); //10
+		v2.add("ram");
+		v2.add("ratan");
+		v2.add("anu");
+		System.out.println(v2.capacity()); //10
+		
+		System.out.println(v2);
+		
+		
+		
+	}
+
+
+}

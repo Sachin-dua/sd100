@@ -1,0 +1,18 @@
+package com.tcs;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class ArrayToArrayList 
+{
+	public static void main(String[] args) 
+	{
+		String[] str = {"ram","ratan","anu"};
+		
+		ArrayList<String>a1 = new ArrayList<String>(Arrays.asList(str));
+		a1.add("sham");
+		
+		a1.forEach(System.out::println);
+	}
+	
+}

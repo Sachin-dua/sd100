@@ -1,0 +1,18 @@
+package com.tcs;
+
+import java.util.ArrayList;
+
+public class ArrayListEx1 {
+
+	public static void main(String[] args) 
+	{
+		ArrayList objs = new ArrayList();
+		objs.add("test");
+		objs.add(null);
+		objs.add(10);
+		objs.add(10.9);
+		System.out.println(objs);
+
+	}
+
+}

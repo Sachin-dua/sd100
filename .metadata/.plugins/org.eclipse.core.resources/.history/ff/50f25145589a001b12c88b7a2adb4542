@@ -1,0 +1,22 @@
+
+package com.tcs;
+
+import java.util.ArrayList;
+
+public class Contains {
+
+	public static void main(String[] args) 
+	{
+		ArrayList<String> a1 = new ArrayList<String>();
+		a1.add("test");
+		a1.add("test2");
+		
+		ArrayList<String> a2 = new ArrayList<String>();
+		a2.add("test");
+		a2.add("test2");
+		
+		System.out.println(a1.contains("test")); // false
+
+	}
+
+}

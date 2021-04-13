@@ -1,0 +1,122 @@
+package com.tcs;
+
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.Vector;
+
+public class CollectionToArray {
+
+	//with generic approach
+	public static void main(String[] args) 
+	{
+		ArrayList<String> a1= new ArrayList<String>();
+		a1.add("ram");
+		a1.add("ratan");
+		
+		String[] str= new String[a1.size()];
+		a1.toArray(str);
+		
+		for(String s:str)
+		{
+			System.out.println(s);
+		}
+		
+		ArrayList<Integer>tt = new ArrayList<Integer>();
+		tt.add(45);
+
+	}
+
+}
+
+class CollectionToArrayEx2
+{
+	// when you have the array list with different type of data
+	public static void main(String[] args) 
+	{
+		ArrayList a1= new ArrayList();
+		a1.add("ram");
+		a1.add(99);
+		a1.add(12.34);
+		a1.add('c');
+
+		Object c[] = new Object[a1.size()];
+		a1.toArray(c);
+		
+		for(Object ob:c)
+		{
+			System.out.println(ob);
+		}
+		
+		
+	}
+}
+
+class Book
+{
+	int id;String name;String author; double price;
+	Book(int id,String name,String author, double price)
+	{
+		
+	}
+}
+
+class Assignment 
+{
+	public static void main(String[] args) 
+	{
+		Book b1 = new Book(23,"test","ram",17.89);
+		Book b2 = new Book(24,"hum","rohit",7.89);
+		Book b3 = new Book(25,"tum","ramesh",15.99);
+		Book b4 = new Book(26,"perry","ratan",21.39);
+		
+		
+		Vector<Book> v = new Vector<Book>();
+		v.add(b1);
+		v.add(b2);
+		v.add(b3);
+		v.add(b4);
+		
+	//	ListIterator<Book> li = v.listIterator();
+		
+		Book bb = v.get(0);
+		System.out.println(bb.id+" "+bb.name+" "+bb.author+" "+bb.price);
+		
+	
+		
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

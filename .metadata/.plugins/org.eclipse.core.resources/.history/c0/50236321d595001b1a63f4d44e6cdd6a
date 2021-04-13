@@ -1,0 +1,34 @@
+
+// Department Class
+public class Department {
+
+    private String DepartmentName;
+    private double RatePerHour;
+
+    //Constructor of the department
+    public Department(String DepartmentName, double RatePerHour) {
+        this.DepartmentName = DepartmentName;
+        this.RatePerHour = RatePerHour;
+    }
+
+    // getter setter of the department
+    public String getDepartmentName() {
+        return DepartmentName;
+    }
+
+    public void setDepartmentName(String DepartmentName) {
+        this.DepartmentName = DepartmentName;
+    }
+
+    public double getHourlyRate() {
+        return RatePerHour;
+    }
+
+    public void setHourlyRate(double RatePerHour) {
+        this.RatePerHour = RatePerHour;
+    }
+    
+    
+    
+    
+}

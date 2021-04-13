@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=StringManipulation/src&amp;lt;com.tcs{StringMethods.java[ImpMethods&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=StringManipulation/src&amp;lt;com.tcs{StringMethods.java[BasicMathDemo&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=WrapperClass/src&amp;lt;{WrapperClassTest.java[WrapperClassTest&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Abstraction/src&amp;lt;{AbstractionEX.java[Test&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionToArray.java[Assignment&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[Sorting&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[Teacher&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[TCSTest&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[ME&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[YS&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[BGS&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[SunFlower&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[Assignment1&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[Assignment2&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[ActualTest&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=CollectionsApps/src&amp;lt;com.tcs{CollectionOperations.java[ActualTest2&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="523"/>
+			<item key="DIALOG_WIDTH" value="391"/>
+			<item key="DIALOG_X_ORIGIN" value="665"/>
+			<item key="DIALOG_Y_ORIGIN" value="197"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="expressionHistory">
+	</section>
+</section>

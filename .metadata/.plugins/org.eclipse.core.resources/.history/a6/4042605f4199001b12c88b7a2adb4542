@@ -1,0 +1,77 @@
+package com.tcs;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class RemoveElement {
+
+	public static void main(String[] args) 
+	{
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("ratan");
+		al.add("sonu");
+		al.add("yello");
+		al.add("adam");
+		
+		ListIterator<String> li = al.listIterator();
+		
+		while(li.hasNext()) 
+		{
+			String c = li.next();
+			if(c.equals("yello"))
+			{
+				li.remove();
+			}
+		}
+		System.out.println(al);
+
+	}
+
+}
+
+class Student
+{
+	int id;
+	String name;
+	String city;
+	public Student(int id, String name, String city) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.city = city;
+	}
+	
+}
+
+ class RemoveElementEx2 {
+
+	public static void main(String[] args) 
+	{
+		ArrayList<Student> al = new ArrayList<Student>();
+		al.add(new Student(56,"anu","barnala"));
+		al.add(new Student(45,"sanu","california"));
+		al.add(new Student(78,"ratan","patiala"));
+		al.add(new Student(5,"rohit","hyderabad"));
+		
+		
+		Iterator<Student> itr = al.iterator();
+		
+		while(itr.hasNext())
+		{
+			Student s = itr.next();
+			if(s.name=="anu")
+			{
+				itr.remove();
+			}
+			
+			System.out.println(s.id+" "+s.name+" "+s.city);
+			
+		}
+		
+		
+
+
+	}
+
+}

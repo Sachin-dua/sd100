@@ -1,0 +1,269 @@
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+
+public class EmpSalary 
+{
+
+	public static List<DifferentDepartments> departments = new ArrayList<>();
+	public static List<Emp> employees = new ArrayList<>();
+
+	// Taking input from the user
+	public static Scanner userInput = new Scanner(System.in);
+
+	public static void AddDepartment()
+	{
+		// department objects
+		DifferentDepartments department1 = new DifferentDepartments("Hotel", 12.50);
+		DifferentDepartments department2 = new DifferentDepartments("IT", 23.49);
+		DifferentDepartments department3 = new DifferentDepartments("Accounts", 20.75);
+		DifferentDepartments department4 = new DifferentDepartments("Sales", 23.75);
+		DifferentDepartments department5 = new DifferentDepartments("HR", 19.00);
+		DifferentDepartments department6 = new DifferentDepartments("CustomerService", 14.75);
+
+		// add department into the list   
+		departments.add(department1);
+		departments.add(department2);
+		departments.add(department3);
+		departments.add(department4);
+		departments.add(department5);
+		departments.add(department6);
+
+	}
+
+	public static double deductFederalTax(double grossPay , String employeeName)
+	{
+
+		double federalTax = 0;
+		int checkFirst = 0;
+
+		for(Emp e : employees)
+		{
+
+			if(e.getEmpName().equalsIgnoreCase(employeeName))
+			{
+				checkFirst +=1;
+
+			}
+		}
+		if(checkFirst == 0)
+		{
+
+			//deduct 15%  federal taz
+			federalTax = (grossPay * 15) / 100;
+
+		}
+		else
+		{
+			//deduct 21%  federal tax for second time
+			federalTax = (grossPay * 21) / 100;
+
+		}
+		return federalTax;
+	}
+
+	public static double deductStateTax(double grossPay , String empName)
+	{
+
+		double stateTax = 0;
+		int checkFirst = 0;
+
+		for(Emp e : employees)
+		{
+
+			if(e.getEmpName().equalsIgnoreCase(empName)){
+				checkFirst +=1;
+
+			}
+		}
+		if(checkFirst == 0){
+
+			//deduct 16%  federal tax
+			stateTax = (grossPay * 6.05) / 100;
+
+		}else{
+
+			//deduct 22%  federal tax for second time
+			stateTax = (grossPay * 7.25) / 100;
+
+
+		}
+		return stateTax;
+	}
+
+
+	public static double deducePensionFund(double grossPay)
+	{
+		double pensionFund = 0;
+		//deduct 3.92%  pension
+		pensionFund = (grossPay * 3.92) / 100;
+		return pensionFund;
+	}
+
+	public static double deductEI(double grossPay)
+	{
+
+		double employeementInsurance = 0;
+
+		//deduct 1.98%  Insurance of the employee
+		employeementInsurance = (grossPay * 1.62) / 100;
+
+		return employeementInsurance;
+	}
+
+
+
+	public static void main(String[] args) {
+		AddDepartment();
+		while(true)
+		{
+			int length = employees.size();
+			// set unique employee Number 
+			String empNumber = "EMP"+length+10;
+			String empName ;
+			DifferentDepartments department;
+			double grossSalary = 0;
+			double federalTax = 0;
+			double stateTax= 0;
+			double pensionFund= 0;
+			double employeementInsurance =0;
+			double netSalary =0;
+			int weekNumber =0;
+			int overTime =0;
+
+			// ask user details by use input
+			System.out.println("Input employee name: ");
+			empName = userInput.nextLine();
+
+			System.out.println("Input department: ");
+
+			//printing all the available department and selecting the required one
+			int count =1;
+			for(DifferentDepartments d : departments)
+			{
+				System.out.println(count+ " : "+d.getDepartmentName());
+				count+=1;
+			}
+
+			System.out.print("Choose Required Department: ");
+			String selectd = userInput.nextLine();
+
+			// set user selected department
+			department = departments.get(Integer.parseInt(selectd)-1);
+
+			// ask user for number of hours    
+			System.out.print("Number of hours the employee worked: ");
+			String nOfHours = userInput.nextLine();
+
+			if(Integer.parseInt(nOfHours) >44){
+
+				overTime = Integer.parseInt(nOfHours) - 44;
+
+			}
+
+			// gross salary number of hours * hourly rate
+			grossSalary = department.getHourlyRate() * Integer.parseInt(nOfHours);
+
+			// get week number from user
+			System.out.println("Enter Week Number 1 to 52");
+			String week = userInput.nextLine();
+			weekNumber = Integer.parseInt(week);
+
+			System.out.println("Commission is being paid: Yes/No?");
+
+			String ask = userInput.nextLine();
+			if(ask.equalsIgnoreCase("yes")){
+
+				// deduct federal tax
+				federalTax = deductFederalTax(grossSalary, empName);
+
+				// deduct provincial tax
+				stateTax = deductStateTax(grossSalary, empName);
+
+				// deduct pension funds 
+				pensionFund = deducePensionFund(grossSalary);
+
+				// deduct Employee Insurance
+				employeementInsurance = deductEI(grossSalary);
+
+			}
+
+			double allDeducts =  federalTax + stateTax +  pensionFund + employeementInsurance;
+			// net salary minus all the deducts calculated from the gross salary
+			netSalary = grossSalary - allDeducts;
+
+			Emp employee = new Emp(empNumber, empName ,  department, grossSalary, 
+					federalTax, stateTax, pensionFund, employeementInsurance, netSalary , weekNumber , overTime);
+
+			// add employee into the employees table
+			employees.add(employee);
+
+			System.out.println("Employee# \t\t Name \t\t Department \t\t grossSalary \t\t federalTax \t\t provincialTax \t\t pensionFund \t\t EmployeementInsurance \t\t netSalary \t\t currentDate \t\t WeekNumber \t\t OverTime");
+
+			// Date method to view date
+			Date currentDate = new Date();
+			for(Emp e : employees){
+
+				System.out.println(e.getEmpNumber()+"     \t\t "+e.getEmpName()+"\t\t"+e.getDepartment().getDepartmentName()
+						+" \t\t "+e.getGrossSalary()+"    \t\t    "+e.getFederalTax()+"   \t\t   "+e.getStateTax()+"   \t\t   "+e.getContributionOfPensionFund()
+						+" \t\t  "+e.getContributionOfEmployeementInsurance()+"   \t\t  "+e.getNetSalary()+" \t\t"+currentDate+" \t"+e.getWeekNumber()+" \t\t "+e.getOverTime()+" Hours");
+			}
+
+			// Display distribution of overtimes hours
+			CreateGraph overTimeGraph = new CreateGraph("Distribution of overtime hours");
+
+			overTimeGraph.setSize(500,400);
+			overTimeGraph.setVisible(true);
+
+			int counter = 50;
+			int counter2 = 0;
+			for(Emp e : employees){
+				if(e.getOverTime()>0){
+
+					overTimeGraph.addNodeIntoTheGraph(""+e.getOverTime(), counter,counter);
+					counter+=50;
+					overTimeGraph.addEdgeIntoTheGraph(0,counter2);
+					counter2+=1;
+				}
+			}
+
+			// Display sales distribution
+			CreateGraph salesDGraph = new CreateGraph("Distribution of overtime");
+
+			salesDGraph.setSize(500,400);
+			salesDGraph.setVisible(true);
+
+			int num = 50;
+			int num2 = 0;
+			for(Emp e : employees){
+				if(e.getDepartment().getDepartmentName().equals("sales")){
+
+					salesDGraph.addNodeIntoTheGraph(e.getEmpNumber(), num,num);
+					num+=50;
+					salesDGraph.addEdgeIntoTheGraph(0,num2);
+					num2+=1;
+				}
+			}
+
+
+
+
+			System.out.print("Need information about another employee Yes/No ? : ");
+			String askForMore = userInput.nextLine();
+			overTimeGraph.setVisible(false);
+			salesDGraph.setVisible(false);
+
+			if(askForMore.equalsIgnoreCase("no")){
+
+				System.out.println("Thanks for visiting!");
+				System.out.println("Have a great rest of your day!");
+				System.exit(0);
+			}
+		}
+
+
+	}
+
+}

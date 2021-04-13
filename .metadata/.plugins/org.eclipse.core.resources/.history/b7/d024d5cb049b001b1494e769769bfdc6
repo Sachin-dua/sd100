@@ -1,0 +1,60 @@
+package com.tcs;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class CollectionOperations
+{
+
+	public static void main(String[] args) 
+	{
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("test");
+		al.add("sachin");
+		al.add("himani");
+		al.add("ratan");
+		System.out.println("Before sorting "+al);
+		Collections.sort(al);
+		System.out.println("After sorting "+al);
+		
+		// Scenario: we can not sort a list with different type of data type elements
+		try 
+		{
+		ArrayList al2 = new ArrayList();
+		al2.add("test");
+		al2.add("sachin");
+		al2.add("himani");
+		al2.add("ratan");
+		al2.add(10);
+		
+		Collections.sort(al2);
+		System.out.println(al2); 
+		}
+		
+		catch(ClassCastException e)
+		{
+			e.printStackTrace();
+		}
+		// Scenario: we can not sort a list with null value
+		try 
+		{
+		ArrayList al3 = new ArrayList();
+		al3.add("test");
+		al3.add("sachin");
+		al3.add("himani");
+		al3.add(null);
+		
+		
+		Collections.sort(al3);
+		System.out.println(al3); 
+		}
+		
+		catch(NullPointerException e)
+		{
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

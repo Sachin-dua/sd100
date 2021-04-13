@@ -1,0 +1,47 @@
+package com.tcs;
+
+import java.util.ArrayList;
+
+public class ArrayListAssignment {
+
+	
+
+}
+
+class Customer
+{
+	int id; 
+	String name;
+	String addr;
+	int mobile;
+	public Customer(int id, String name, String addr, int mobile) 
+	{
+		super();
+		this.id = id;
+		this.name = name;
+		this.addr = addr;
+		this.mobile = mobile;
+	}
+	
+}
+
+class DataReadingEx
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<Customer> al= new ArrayList<Customer>();
+		al.add(new Customer(12,"ratan","Hydrabad",787788));
+		al.add(new Customer(34,"anu","Hydrabad",4535445));
+		al.add(new Customer(56,"piyush","Patiala",4543));
+		al.add(new Customer(90,"tom","Montreal",5654654));
+		
+		for (Customer customer : al) {
+			System.out.println(customer.id+" "+customer.name+" "+customer.addr+" "+customer.mobile);
+			
+		}
+		
+		al.get(1);
+		
+
+	}
+}

@@ -1,0 +1,20 @@
+package com.tcs;
+
+import java.util.ArrayList;
+
+public class ArraylistInfo {
+	public static void main(String[] args) {
+		ArrayList a1 = new ArrayList();
+		a1.add(10);
+		a1.add(100);
+		
+		ArrayList a2 = new ArrayList(a1);
+		a2.add(90);
+		a2.add(150);
+		
+		for (Object object : a2) {
+			System.out.println(object);
+		}
+	}
+
+}
