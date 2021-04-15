@@ -1,8 +1,0 @@
-package com.tcs;
-
-public class Snippet {
-	
-	Student s =(Student)objs.get(1);
-	System.out.println(s.sid+" "+s.sname );
-}
-

@@ -1,6 +1,7 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 public class WrapperClassTest {
 
@@ -91,3 +92,12 @@ class Test
 	}
 }
 
+ class HashMapEx1 
+{
+	public static void main(String[] args) 
+	{
+		HashMap<Integer,String> h = new HashMap<Integer,String>(); 
+		h.put(111, "ratan");
+		System.out.println(h.keySet());
+	}
+}

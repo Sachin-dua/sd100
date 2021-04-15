@@ -20,7 +20,7 @@ public class PropertiesEx
 		System.out.println(properties.getProperty("id"));    //657575
 		System.out.println(properties.getProperty("username")); //testuser
 		System.out.println(properties.getProperty("password")); //login
-		System.out.println(properties.getProperty("port")); //8080  
+		System.out.println(properties.getProperty("portdassd")); //8080  
 
 	}
 
