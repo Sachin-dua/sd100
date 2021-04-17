@@ -105,7 +105,10 @@ class TreeMapEx5
 		System.out.println(sm2); //{2=ratan, 11=sachin}
 		
 		SortedMap<Integer,String>sm3 = tp.tailMap(15);
-		System.out.println(sm3);
+		System.out.println(sm3); // {15=ram, 19=polly, 28=mohan, 90=dolly}
+		
+		System.out.println("Unused");
+		
 
 	}
 }
