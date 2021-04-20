@@ -377,11 +377,11 @@ class MainTest
 			if(ob1 instanceof Integer )
 			{
 				
-				System.out.println(ob);
+				//System.out.println(ob);
 			}
 			
 		}
-		
+		//ob=null;
 		
 	}
 }
